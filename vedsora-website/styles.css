@@ -274,6 +274,9 @@ footer h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-tran
 footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 footer a{text-decoration:none}
 footer a:hover{text-decoration:underline}
+footer a.ig-link{display:inline-flex;align-items:center;gap:8px}
+footer a.ig-link .ig{flex:none}
+[data-page][id]{scroll-margin-top:120px}
 #main{outline:none}
 .page{animation:fade .35s ease-out}
 @keyframes fade{from{transform:translateY(6px)}to{transform:none}}
