@@ -7,7 +7,9 @@ index.html   all pages, each in a <div data-page="...">: home, why, how, organis
 styles.css   design tokens (colours, fonts) at the top, then components; light and dark themes
 script.js    page switching by URL hash (#how, #musicians ...), per-page titles, the line demo,
              the evidence-grade explorer and the contact form
-assets/      founder photo, favicon, social sharing image (og-image.png)
+assets/      founder photo; logo-mark.svg (brand icon, also used as favicon.svg); logo-512.png and
+             apple-touch-icon.png (raster copies of the icon); og-image.png (social sharing image).
+             The wordmark is live text in Playfair Display Bold with the blue-to-purple brand gradient.
 robots.txt, sitemap.xml
 
 Content source: "Vedsora- Business Plan (Final)" (November 2026). Do not add claims that are not in it.

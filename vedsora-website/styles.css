@@ -8,7 +8,7 @@ img{max-width:100%}
 /* Layout concept: an editorial ledger. Wide ivory pages, serif statements on the left, mono "record" cards on the right; one indigo band per page carries the record layer. */
 :root{
   --bg:#F5F1E6; --paper:#FCFAF4; --ink:#1D1E26; --muted:#5C5D69; --line:#DBD4C1;
-  --indigo:#232A6B; --indigo-soft:#E6E6F1; --brass:#B08A3A; --brass-ink:#76570F;
+  --indigo:#232A6B; --indigo-soft:#E6E6F1; --logo-a:#1B51BA; --logo-b:#8F34E9; --brass:#B08A3A; --brass-ink:#76570F;
   --band:#1E2460; --band-ink:#F5F1E6; --band-muted:#B9BCDD; --band-line:#3B4290; --band-card:#272E78;
   --ok:#1F6B4F; --err:#A4342A;
   --display:"Instrument Serif","Iowan Old Style",Georgia,serif;
@@ -17,12 +17,12 @@ img{max-width:100%}
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#15161D; --paper:#1D1F29; --ink:#F1EDE1; --muted:#A9AAB8; --line:#343645;
-  --indigo:#AEB4F2; --indigo-soft:#262A4A; --brass:#CDA85A; --brass-ink:#DDBB72;
+  --indigo:#AEB4F2; --indigo-soft:#262A4A; --logo-a:#7EA2FF; --logo-b:#C08BFF; --brass:#CDA85A; --brass-ink:#DDBB72;
   --band:#1A1F55; --band-ink:#F1EDE1; --band-muted:#B3B7DC; --band-line:#3A418C; --band-card:#232A6E;
   --ok:#6FCBA6; --err:#F09A8C; color-scheme:dark } }
 :root[data-theme="dark"]{
   --bg:#15161D; --paper:#1D1F29; --ink:#F1EDE1; --muted:#A9AAB8; --line:#343645;
-  --indigo:#AEB4F2; --indigo-soft:#262A4A; --brass:#CDA85A; --brass-ink:#DDBB72;
+  --indigo:#AEB4F2; --indigo-soft:#262A4A; --logo-a:#7EA2FF; --logo-b:#C08BFF; --brass:#CDA85A; --brass-ink:#DDBB72;
   --band:#1A1F55; --band-ink:#F1EDE1; --band-muted:#B3B7DC; --band-line:#3A418C; --band-card:#232A6E;
   --ok:#6FCBA6; --err:#F09A8C; color-scheme:dark }
 *{box-sizing:border-box}
@@ -61,8 +61,15 @@ section.tight{padding-block:clamp(36px,6vw,64px)}
 /* header */
 .hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-size:1.7rem;line-height:1}
-.logo svg{width:28px;height:28px;flex:none}
+.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;line-height:1}
+.logo-mark{width:34px;height:34px;flex:none;border-radius:9px;box-shadow:0 1px 2px rgb(20 40 110 / .18),0 4px 12px -4px rgb(40 60 190 / .35)}
+.wordmark{font-family:"Playfair Display",var(--display);font-weight:700;font-size:1.6rem;letter-spacing:-.005em;line-height:1;padding-bottom:.08em;color:var(--logo-a)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .wordmark{background:linear-gradient(90deg,var(--logo-a),var(--logo-b));-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+footer .logo{align-self:flex-start}
+footer .logo-mark{width:30px;height:30px;border-radius:8px}
+footer .wordmark{font-size:1.4rem}
 .nav{display:none;gap:2px;align-items:center}
 .nav a{font-size:.88rem;font-weight:500;text-decoration:none;padding:8px 9px;border-radius:6px;color:var(--muted);white-space:nowrap}
 .nav a:hover,.nav a[aria-current="page"]{color:var(--ink)}
