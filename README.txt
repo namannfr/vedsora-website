@@ -19,3 +19,11 @@ has been sent yet. To send directly, set data-endpoint="https://..." on <form id
 or an Azure Function that accepts a JSON POST and returns 2xx). Success is shown only on a 2xx response.
 
 Before launch: approved privacy, terms, safeguarding and data-protection texts (the current pages are interim notices).
+
+App pages (used by the Vedsora Android app; these exact paths must not move or be renamed):
+  /confirm/?t=TOKEN     confirm/index.html    payer confirmation page; loads /vedsora-config.js
+  /privacy.html         privacy.html          app privacy notice
+  /delete-account.html  delete-account.html   account deletion instructions (required by Google Play)
+  /support.html         support.html
+  /vedsora-config.js    vedsora-config.js     Supabase URL and publishable key only. Never put a secret or service_role key here.
+favicon.ico is at the root because these standalone pages do not declare their own icon.
